@@ -1,0 +1,10 @@
+{
+  "name": "yoAngularjsTemplate",
+  "version": "0.0.0",
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "angular-translate": "^2.15.1"
+  }
+}

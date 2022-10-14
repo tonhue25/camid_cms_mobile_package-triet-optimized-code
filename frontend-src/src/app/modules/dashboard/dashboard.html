@@ -1,0 +1,81 @@
+
+<div ng-init="getInfo()"></div>
+<h3 class="page-title"> Dashboard </h3>
+
+<!-- BEGIN MAIN CONTENT -->
+<div>
+    <!-- BEGIN DASHBOARD STATS -->
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat blue">
+                <div class="visual">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <div class="details">
+                    <div class="number"> {{info.subTotal}}</div>
+                    <div class="desc"> {{'tong_so_thue_bao'|translate}} </div>
+                </div>
+                <!--<a class="more" href="#"> View more
+                    <i class="m-icon-swapright m-icon-white"></i>
+                </a>-->
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat red">
+                <div class="visual">
+                    <i class="fa fa-bar-chart-o"></i>
+                </div>
+                <div class="details">
+                    <div class="number"> {{info.newSubTotal}}</div>
+                    <div class="desc"> {{'thue_bao_moi_dang_ky'|translate}} </div>
+                </div>
+                <!--<a class="more" href="#"> View more
+                    <i class="m-icon-swapright m-icon-white"></i>
+                </a>-->
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat green">
+                <div class="visual">
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+                <div class="details">
+                    <div class="number"> {{info.activeSubTotal}}</div>
+                    <div class="desc"> {{'thue_bao_hoat_dong'|translate}} </div>
+                </div>
+                <!--<a class="more" href="#"> View more
+                    <i class="m-icon-swapright m-icon-white"></i>
+                </a>-->
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat purple">
+                <div class="visual">
+                    <i class="fa fa-globe"></i>
+                </div>
+                <div class="details">
+                    <div class="number"> {{info.errorTotal}} </div>
+                    <div class="desc"> {{'loi_giao_dich_chua_xu_ly'|translate}}</div>
+                </div>
+                <!--<a class="more" href="#"> View more
+                    <i class="m-icon-swapright m-icon-white"></i>
+                </a>-->
+            </div>
+        </div>
+    </div>
+    <!-- END DASHBOARD STATS -->
+    <div class="row">
+
+        <div class="col-md-4 col-sm-12">
+          <div id="sub_list" class="portlet-body-morris-fit morris-chart" style="height: 260px"> </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div id="request_list" class="portlet-body-morris-fit morris-chart" style="height: 260px"> </div>
+        </div>
+      <div class="col-md-4 col-sm-12">
+        <div id="os_list"  style="height: 260px"> </div>
+      </div>
+    </div>
+
+</div>
+

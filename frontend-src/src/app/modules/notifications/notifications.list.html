@@ -1,0 +1,35 @@
+<div class="row">
+  <div data-vtg-table="dtConfig" list-of-date="listDate" class="table-container" ng-model="itemSelected" fn-export="fnExport">
+    <div class="col-sm-12 margin-bottom-10 filter-region form-inline">
+      <!--<div class="form-group">
+        <div filter-language></div>
+      </div>-->
+      <div class="pull-right form-group search-input selectSearch  margin-left-10">
+
+        <label class="control-label"> {{"Effective Time"|translate}} </label>
+        <div class="input-group date bs-datetime input-group-sm margin-left-10" no-time="1" id="startTime" name="startTime"
+          datepickerfilter ng-model="listDate.startTime"></div>
+        <span class="btn btn-sm btn-default search-button"> {{"tim_kiem"|translate}} </span>
+      </div>
+      <div class="pull-right form-group search-input margin-left-20">
+        <label class="control-label"> {{"Status"|translate}} </label>
+        <select class="form-control input-sm select-search select-margin-right" filter="status">
+          <option value="4">{{"All"|translate}}</option>
+          <option value="0">{{"Create new"|translate}}</option>
+          <option value="1">{{"Approved"|translate}}</option>
+          <option value="2">{{"Running"|translate}}</option>
+          <option value="3">{{"Complete"|translate}}</option>
+        </select>
+      </div>
+      <div class="pull-right form-group search-input  margin-left-10">
+        <label class="control-label"> {{"Title"|translate}} </label>
+        <input filter="title" name="title" class="input-sm  form-control">
+      </div>
+
+
+    </div>
+    <div class="col-sm-12">
+      <table class="table table-bordered table-hover table-checkable"></table>
+    </div>
+  </div>
+</div>

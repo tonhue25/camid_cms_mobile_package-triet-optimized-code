@@ -1,0 +1,12 @@
+<uib-tabset active="settings.activeTabIndex">
+  <uib-tab index="0" heading="{{serviceGroupText}}" ng-click="goToServiceGroup()">
+    <div ui-view="service-groups" class="fade-in-up"></div>
+  </uib-tab>
+  <uib-tab index="1" heading="{{serviceText}}" ng-click="goToService()">
+    <div ui-view="services" class="fade-in-up"></div>
+  </uib-tab>
+  <uib-tab index="2" heading="{{subServiceText}}" ng-click="goToSubService()">
+    <div ui-view="sub-services" class="fade-in-up"></div>
+  </uib-tab>
+</uib-tabset>
+

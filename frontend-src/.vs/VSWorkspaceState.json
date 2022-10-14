@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\common",
+    "\\src\\app\\modules",
+    "\\src\\app\\modules\\advertbanners",
+    "\\src\\app\\modules\\applications",
+    "\\src\\app\\modules\\dashboard",
+    "\\src\\app\\modules\\experiencelinks",
+    "\\src\\app\\modules\\services"
+  ],
+  "SelectedNode": "\\src\\app\\common\\services.js",
+  "PreviewInSolutionExplorer": false
+}

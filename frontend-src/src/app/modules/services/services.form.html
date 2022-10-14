@@ -1,0 +1,304 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div ng-if="mode=='them'" class="panel-title">{{"them_moi_dich_vu"|translate}}</div>
+    <div ng-if="mode=='sua'" class="panel-title">{{"cap_nhat_dich_vu"|translate}}</div>
+  </div>
+  <div class="panel-body">
+    <form class="form margin-bottom-40" role="form" id="form-dich-vu" mode="{{mode}}">
+      <div class="form-heading text-center">
+        <button class="btn btn-success" ng-if="mode=='them'"><i class="fa fa-plus"></i> {{"them"|translate}}</button>
+        <button class="btn btn-success" ng-if="mode=='sua'"><i class="fa fa-plus"></i> {{"luu"|translate}}</button>
+        <div class="btn btn-danger" ng-click="goToList()">
+          <i class="fa fa-close"></i> {{"huy"|translate}}
+        </div>
+      </div>
+      <div class="form-body">
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-right">{{"ma_dich_vu"|translate}}</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" name="code" ng-model="data.code" />
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-sm-4 control-label text-right">{{"ten_dich_vu"|translate}}</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" name="name" ng-model="data.name" />
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-right">{{"nhom_dich_vu"|translate}}</label>
+                <div class="col-md-8">
+                  <select select2 class="form-control select2" refresh-counter="serviceGroupRefresh" get-data="getServiceGroups()" value="{{data.serviceId}}" name="serviceGroupId" ng-model="data.serviceGroupId" placeholder="{{selectServiceGroupText}}">
+                    <option></option>
+                  </select>
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" style="padding-top:15px">
+              <div radio-language ng-model="data.language" name="language"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-right">{{"dau_so"|translate}}</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" name="shortCode" ng-model="data.shortCode" />
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <!--<div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-right">{{"chon_hoat_dong"|translate}}</label>
+                <div class="md-radio-inline">
+                  <div class="md-radio">
+                    <input type="radio" id="checkbox1_11" name="actionType" value="1" ng-model="data.actionType" class="md-radiobtn">
+                    <label for="checkbox1_11">
+                      <span></span>
+                      <span class="check"></span>
+                      <span class="box"></span> Call
+                    </label>
+                  </div>
+                  <div class="md-radio">
+                    <input type="radio" id="checkbox1_12" name="actionType" value="0" ng-model="data.actionType" class="md-radiobtn">
+                    <label for="checkbox1_12">
+                      <span></span>
+                      <span class="check"></span>
+                      <span class="box"></span> Register
+                    </label>
+                  </div>
+                </div>
+              </div>-->
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 text-right control-label">{{"Registerable"|translate}}</label>
+                <div class="col-md-8">
+                  <label class="mt-checkbox mt-checkbox-outline">
+                    <input class="form-control"  type="checkbox" ng-checked="data.actionType==1 || data.actionType==3" ng-click="(data.actionType==0)?data.actionType=1:(data.actionType==1)?data.actionType=0:(data.actionType==2)?data.actionType=3:data.actionType=2">
+                    <span></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 text-right control-label">{{"Un-Registerable"|translate}}</label>
+                <div class="col-md-8">
+                  <label class="mt-checkbox mt-checkbox-outline">
+                    <input class="form-control" type="checkbox" ng-checked="data.actionType==2 || data.actionType==3" ng-click="(data.actionType==0)?data.actionType=2:(data.actionType==1)?data.actionType=3:(data.actionType==2)?data.actionType=0:data.actionType=1">
+                    <span></span>
+                  </label>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class="row margin-top-15">
+              <div class="form-group">
+                  <label class="col-md-2 control-label text-right">{{"goi_data"|translate}}</label>
+                  <div class="col-md-8">
+                    <select class="form-control" name="type" convert-number ng-model="data.serviceType">
+                      <option value="0" ng-selected="data.serviceType==0">Service</option>
+                      <option value="1" ng-selected="data.serviceType==1">Data package</option>
+                      <option value="13" ng-selected="data.serviceType==13">Data package: Prepaid + 3G</option>
+                      <option value="14" ng-selected="data.serviceType==14">Data package: Prepaid + 4G</option>
+                      <option value="17" ng-selected="data.serviceType==17">Data package: Prepaid + 3G/4G</option>
+                      <option value="23" ng-selected="data.serviceType==23">Data package: Postpaid + 3G</option>
+                      <option value="24" ng-selected="data.serviceType==24">Data package: Postpaid + 4G</option>
+                      <option value="27" ng-selected="data.serviceType==27">Data package: Postpaid + 3G/4G</option>
+                      <option value="33" ng-selected="data.serviceType==33">Data package: Prepaid/Postpaid + 3G</option>
+                      <option value="34" ng-selected="data.serviceType==34">Data package: Prepaid/Postpaid + 4G</option>
+                      <option value="37" ng-selected="data.serviceType==37">Data package: Prepaid/Postpaid + 3G/4G</option>
+                      <option value="333" ng-selected="data.serviceType==333">Data package: [Prepaid + 3G]/[Postpaid + 3G]</option>
+                      <option value="334" ng-selected="data.serviceType==334">Data package: [Prepaid + 3G]/[Postpaid + 4G]</option>
+                      <option value="337" ng-selected="data.serviceType==337">Data package: [Prepaid + 3G]/[Postpaid + 3G/4G]</option>
+                      <option value="343" ng-selected="data.serviceType==343">Data package: [Prepaid + 4G]/[Postpaid + 3G]</option>
+                      <option value="344" ng-selected="data.serviceType==344">Data package: [Prepaid + 4G]/[Postpaid + 4G]</option>
+                      <option value="347" ng-selected="data.serviceType==347">Data package: [Prepaid + 4G]/[Postpaid + 3G/4G]</option>
+                      <option value="373" ng-selected="data.serviceType==373">Data package: [Prepaid + 3G/4G]/[Postpaid + 3G]</option>
+                      <option value="374" ng-selected="data.serviceType==374">Data package: [Prepaid + 3G/4G]/[Postpaid + 4G]</option>
+                      <option value="377" ng-selected="data.serviceType==377">Data package: [Prepaid + 3G/4G]/[Postpaid + 3G/4G]</option>
+                    </select>
+                    <div class="form-control-focus"> </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-2 control-label text-right">{{"mo_ta_ngan"|translate}}</label>
+              <div class="col-md-10">
+                <input type="text" class="form-control" name="shortDes" ng-model="data.shortDes" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group form-md-line-input">
+              <label class="col-sm-2 control-label text-right">{{"mo_ta_chi_tiet"|translate}}</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" summernote name="fullDes" ng-model="data.fullDes"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <h4 class="text-left col-md-12">Icon</h4>
+            <div class="col-md-12">
+              <div ng-model="data.iconUrl" name="iconUrl" fileinput mode="{{mode}}" folder="service" ng-class="{'fileinput-new': mode=='them','fileinput-exists':mode=='sua'}" class="fileinput" data-provides="fileinput"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <h4 class="text-left col-md-12">{{"anh_mo_ta"|translate}}</h4>
+            <div class="col-md-12">
+              <div ng-model="data.imgDesUrl" name="imgDesUrl" fileinput mode="{{mode}}" folder="service" class="fileinput" ng-class="{'fileinput-new': mode=='them','fileinput-exists':mode=='sua'}" data-provides="fileinput"></div>
+            </div>
+          </div>
+          <div class="form-group form-md-line-input col-md-12 margin-top-15">
+            <input type="text" class="form-control margin-top-10" name="webLink" ng-model="data.webLink">
+            <label class="col-md-12">{{"link_web"|translate}}</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div ng-if="mode=='them'" ng-click="reset()" class="clear-form-data btn btn-sm btn-circle btn-danger">{{"xoa"|translate}}</div>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+
+  FormiCheck.init();
+  var scope = angular.element("#angular-controller").scope();
+
+  function themDichVu() {
+    validator.form();
+    if (validator.valid()) {
+      scope.addService();
+    }
+  }
+  function suaDichVu() {
+    validator.form();
+    if (validator.valid()) {
+      scope.putService();
+    }
+  }
+
+  $(document).ready(function () {
+
+    validator = myApp.validateForm("#form-dich-vu", {
+      rules: {
+        'name': {
+          required: true,
+          maxlength: config.validate.length200
+        },
+        'code': {
+          required: true,
+          maxlength: config.validate.length20
+        },
+        'fullDes': {
+          required: true,
+          maxlength: config.validate.length4000
+        },
+        'shortDes': {
+          required: true,
+          maxlength: config.validate.length1000
+        },
+        'webLink': {
+          maxlength: config.validate.length200,
+          required: true,
+          urlLink: true,
+        },
+        'serviceGroupId': {
+          required: true
+        },
+        'iconUrl': {
+          required: true,
+          imageLink: true
+        },
+        'imgDesUrl': {
+          required: true,
+          imageLink: true
+        },
+        'shortCode': {
+          //required: true,
+          maxlength: config.validate.length5,
+          number: true
+        },
+        'actionType': {
+          maxlength: 2,
+          number: true
+        },
+      },
+      messages: {
+        'name': {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength200
+        },
+        'code': {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength20
+        },
+        'fullDes': {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength4000
+        },
+        'shortDes': {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength1000
+        },
+        'webLink': {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength200,
+          urlLink: validateMessages.ErrUrl
+        },
+        'serviceGroupId': {
+          required: validateMessages.ErrRequired
+        },
+        'iconUrl': {
+          required: validateMessages.ErrRequired,
+          imageLink: validateMessages.ErrImageLink
+        },
+        'imgDesUrl': {
+          required: validateMessages.ErrRequired,
+          imageLink: validateMessages.ErrImageLink
+        },
+        'shortCode': {
+          //required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength5,
+          number: validateMessages.ErrNumber
+        },
+        'actionType': {
+          maxlength: validateMessages.ErrMaxLength2,
+          number: validateMessages.ErrNumber
+        },
+
+      },
+      submitHandler: function (form) {
+        if ($(form).attr("mode") == 'them') {
+          scope.add();
+
+        }
+        else if ($(form).attr("mode") == 'sua') {
+          scope.update();
+        }
+      }
+    });
+  });
+
+
+</script>

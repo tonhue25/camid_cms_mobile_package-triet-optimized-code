@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>viettel</groupId>
+    <artifactId>ProvisioningMyVTG</artifactId>
+    <version>1.0</version>
+
+    <properties>
+        <springframework.version>4.2.0.RELEASE</springframework.version>
+        <jackson.version>2.5.3</jackson.version>
+        <hibernate.version>4.3.6.Final</hibernate.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <log4j.version>1.2.17</log4j.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>viettel</groupId>
+            <artifactId>commons</artifactId>
+            <version>v2.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/lib/commons.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>viettel</groupId>
+            <artifactId>utils</artifactId>
+            <version>v1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/lib/utils.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>viettel</groupId>
+            <artifactId>PM_LIB</artifactId>
+            <version>v1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/lib/PM_LIB.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>viettel</groupId>
+            <artifactId>ViettelLib</artifactId>
+            <version>v1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/lib/ViettelLib.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>viettel</groupId>
+            <artifactId>myvtg-model</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>viettel</groupId>
+            <artifactId>myvtg-config</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+
+        <resources>
+            <resource>
+                <directory>${basedir}/../myvtg-config/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>provisioning.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                    <exclude>lib/**</exclude>
+                </excludes>
+
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>

@@ -1,0 +1,64 @@
+<div class="row">
+  <div data-vtg-table="dtConfig" class="table-container">
+    <div class="col-sm-12 margin-bottom-10 filter-region form-inline">
+      <input type="hidden" filter="from" />
+      <input type="hidden" filter="to" />
+      <div class="form-group">
+        <label class="control-label">{{"from_date"|translate}}</label>
+        <div for="from" class="input-group date bs-datetime">
+          <input type="text" size="16" class="form-control">
+          <span class="input-group-addon">
+            <button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+          </span>
+        </div>
+
+      </div>
+      <div class="form-group margin-left-20">
+        <label class="control-label">{{"to_date"|translate}}</label>
+        <div for="to" class="input-group date  bs-datetime">
+          <input type="text" size="16" class="form-control">
+          <span class="input-group-addon">
+            <button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+          </span>
+        </div>
+      </div>
+      <div class="form-group margin-left-20">
+        <div filter-language></div>
+      </div>
+      <div class="form-group margin-left-20">
+        <label class="control-label">{{"trang_thai"|translate}}</label>
+        <select class="form-control input-sm" filter="state">
+          <option value="2">{{"tat_ca"|translate}}</option>
+          <option value="1">{{"hien"|translate}}</option>
+          <option value="0">{{"an"|translate}}</option>
+        </select>
+      </div>
+      <div class="pull-right search-input">
+        <!--<input class="input-inline form-control input-sm search-input" filter="name"/>-->
+        <span class="btn btn-sm btn-default search-button">{{"tim_kiem"|translate}}</span>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <table class="table table-bordered table-hover table-checkable"></table>
+    </div>
+  </div>
+</div>
+<script>
+
+  var datepicker = $(".bs-datetime").datepicker({
+    format: 'dd/mm/yyyy',
+    rtl: App.isRTL(),
+    orientation: "bottom left",
+    autoclose: true,
+    pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left"),
+    minView: 2,
+    startDate: '01/01/2000',
+    endDate: '31/12/3000',
+  }).on("changeDate", function (e) {
+    var name = $(e.target).attr("for");
+    var date = e.date.getFullYear() + "-" + (e.date.getMonth() + 1) + "-" + e.date.getDate();
+    $("input[filter='" + name + "']").val(date);
+  });
+
+  //$("input.search-input").hide();
+</script>

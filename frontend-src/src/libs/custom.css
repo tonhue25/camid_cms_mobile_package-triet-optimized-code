@@ -1,0 +1,229 @@
+.dataTables_scrollHead {
+    border-bottom: 1px solid #e7ecf1 !important;
+}
+
+.table-bordered>tbody>tr:last-child>td {
+    border-bottom: 1px solid #e7ecf1 !important;
+}
+
+.select-margin-right {
+    margin-right: 4px;
+}
+
+.input-xsmall-edit,
+.input-small-edit {
+    width: 100% !important;
+    margin: 0 auto;
+}
+
+.table thead tr th {
+    font-size: 13px;
+}
+
+.table td {
+    font-size: 13px;
+}
+
+.form-horizontal .form-group.form-md-line-input>label {
+    font-size: 13px;
+}
+
+.form-md-radios>label {
+    font-size: 13px;
+}
+
+.table.dataTable tbody th,
+table.dataTable tbody td {
+    padding: 2px 5px !important;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+    padding: 1px 9px;
+}
+
+.table.dataTable thead>tr>th.sorting_asc,
+table.dataTable thead>tr>th.sorting_desc,
+table.dataTable thead>tr>th.sorting,
+table.dataTable thead>tr>td.sorting_asc,
+table.dataTable thead>tr>td.sorting_desc,
+table.dataTable thead>tr>td.sorting {
+    padding-right: 15px;
+    padding-left: 10px;
+}
+
+.btn {
+    font-size: 13px !important;
+}
+
+.form-group .control-label {
+    margin-top: 3px;
+}
+
+.form-control {
+    font-size: 13px !important;
+}
+
+.mt-checkbox span {
+    margin-top: 6px;
+}
+
+.select2-results__option,
+.control-label {
+    font-size: 13px;
+}
+
+.dataTables_info,
+.select2-container--bootstrap .select2-selection {
+    font-size: 13px !important;
+}
+
+.input-group-sm>.form-control,
+.input-group-sm>.input-group-addon,
+.input-group-sm>.input-group-btn>.btn,
+.input-sm {
+    font-size: 13px !important;
+}
+
+.date-set {
+    padding: 5px 12px !important;
+}
+
+.fa-info {
+    padding: 0px 10px;
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    .select-margin-right {
+        margin-top: 1px;
+    }
+
+    .selectSearch input {
+        margin-top: 1px !important;
+    }
+
+    .dataTables_scrollBody {
+        height: 350px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse.collapse {
+        overflow-y: scroll !important;
+        position: fixed !important;
+        height: 85vh !important;
+        transition: color 0.5s ease;
+        color: rgba(0, 0, 0, 0);
+    }
+
+    .navbar-collapse.collapse:hover {
+        color: rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-collapse.collapse::-webkit-scrollbar,
+    .navbar-collapse.collapse::-webkit-scrollbar-thumb {
+        width: 13px;
+        border-radius: 6px;
+        background-clip: padding-box;
+        border: 2px solid transparent;
+    }
+
+    .navbar-collapse.collapse::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 0 10px;
+    }
+
+    .page-sidebar .page-sidebar-menu>li.active>a>.selected {
+        display: none;
+    }
+}
+
+.mt-checkbox span {
+    margin-top: 0px !important;
+    margin-left: 5px;
+}
+
+.btnTester {
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+
+.note-editor.note-frame.panel.fullscreen {
+    z-index: 10000000000;
+}
+
+.modal[aria-label='Insert Image'] .modal-body,
+.modal[aria-label='Insert Link'] .modal-body {
+    padding: 30px;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+
+
+div#menu {
+    background: url(menu_1.gif) top no-repeat;
+    padding-top: 33px;
+}
+
+div#menubody {
+    background: url(menu_2.gif) repeat-y;
+    padding-left: 21px;
+}
+
+div#menubottom {
+    height: 26px;
+    background: url(menu_4.gif) bottom no-repeat;
+}
+
+ul#menulist {
+    width: 100%;
+    list-style-type: none;
+}
+
+ul#menulist li {
+    height: 40px;
+    background: url(menu_3.gif) bottom repeat-x;
+}
+
+ul#menulist a {
+    width: 100%;
+    height: 30px;
+    border-left: #75c5de 10px solid;
+    color: black;
+    text-decoration: none;
+    padding: 0 0 0 10px;
+    display: block !important;
+    display: inline-block;
+    line-height: 30px;
+    box-shadow: 0 4px 15px 0 rgba(192, 229, 231, 0.986);
+}
+
+ul#menulist a:hover,
+ul#menulist a.active {
+    background-image: linear-gradient(to right, #75c5de, #75c5de, #75c5de, white);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    background-position: 100% 0;
+    moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    color: white;
+}
+
+#logForm .error {
+    display: none
+}
+
+#logForm.has-error .error {
+    color: #e73d4a;
+    font-size: 12px;
+    display: block;
+}
+
+span.btn.btn-sm.btn-default.search-button.ng-binding {
+    background-color: #e9e9e9;
+}

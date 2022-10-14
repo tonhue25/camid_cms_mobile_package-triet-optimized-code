@@ -1,0 +1,34 @@
+<div class="row">
+  <div data-vtg-table="dtConfig" class="table-container">
+    <div class="col-sm-12 margin-bottom-10 filter-region form-inline">
+      <div class="form-group">
+        <label class="control-label">{{"nhom_dich_vu"|translate}}</label>
+        <select style="width:200px" include-all select2-filter get-data="getServiceGroups()" class="form-control input-sm search-input"
+          filter="serviceGroupId" placeholder="Tất cả">
+            </select>
+      </div>
+
+      <div class="form-group margin-left-20">
+        <div filter-language></div>
+      </div>
+
+      <div class="form-group margin-left-20">
+        <label class="control-label">{{"kieu_dich_vu"|translate}}</label>
+          <select class="form-control input-sm" filter="serviceType">
+            <option value="2">{{"tat_ca"|translate}}</option>
+            <option value="0">{{"dich_vu"|translate}}</option>
+            <option value="1">{{"goi_data"|translate}}</option>
+          </select>
+      </div>
+
+      <div class="pull-right search-input">
+        <input class="input-inline form-control input-sm search-input" filter="name" />
+        <span class="btn btn-sm btn-default search-button">{{"tim_kiem"|translate}}</span>
+      </div>
+
+    </div>
+    <div class="col-sm-12">
+      <table class="table table-bordered table-hover table-checkable"></table>
+    </div>
+  </div>
+</div>

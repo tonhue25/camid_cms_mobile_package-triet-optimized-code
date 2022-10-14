@@ -1,0 +1,98 @@
+<div class="row" id="current-controller">
+    <div class="col-md-12">
+        <form class="form-horizontal form" role="form" id="form-role">
+            <div class="form-body">
+                <div class="form-group form-md-line-input">
+                    <label class="col-md-2 control-label text-left">{{"Program code"|translate}} </label>
+                    <div class="col-md-2">
+                        <input class="form-control" ng-model="data.code" name="code" type="text">
+                    </div>
+                </div>
+                <div class="form-group form-md-line-input">
+                    <div class="col-md-6">
+                        <label class="col-md-4 control-label text-left">{{"from_date"|translate}} </label>
+                        <div class="col-md-5">
+                            <div class="input-group date bs-datetime input-group-sm margin-left-10" no-time="1" id="effectTime" name="effectTime"
+                                 datepickerfilter ng-model="data.fromDate"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-md-2 control-label text-left">{{"to_date"|translate}} </label>
+                        <div class="col-md-5">
+                            <div class="input-group date bs-datetime input-group-sm" no-time="1" id="toDate" name="expiredTime"
+                                 datepickerfilter ng-model="data.toDate"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-right">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-success">Search</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-md-12" style="max-height:60vh;overflow: auto">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th class="text-center">No.</th>
+                <th>Program code</th>
+                <th>Number pushed</th>
+                <th>Number success</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in list">
+                <td class="text-center">{{$index + 1}}</td>
+                <td>{{item.programCode}}</td>
+                <td class="text-right">{{item.numberPushed}}</td>
+                <td class="text-right">{{item.numberSuccess}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    var scope = angular.element("#current-controller").scope();
+    window.setTimeout(function () {
+        validator = myApp.validateForm("#form-role", {
+            rules: {
+                expiredTime: {
+                    // required: true,
+                    expireDate_larger_effectDate: function () {
+                        return $('#effectTime input').val();
+                    },
+                    expireDate_larger_effectDate_3_month: function () {
+                        return $('#effectTime input').val();
+                    },
+                },
+                effectTime: {
+                    required: true
+                },
+                idsn: {
+                    required: true,
+                    phone: true
+                }
+            },
+            messages: {
+                expiredTime: {
+                    required: validateMessages.ErrExpiredTimeReq,
+                    expireDate_larger_effectDate: validateMessages.expireDate_larger_effectDate
+                },
+                effectTime: {
+                    required: validateMessages.ErrEffectTimeReq
+                },
+                idsn: {
+                    required: validateMessages.ErrRequired,
+                    phone: validateMessages.ErrPhonePattern
+                }
+            },
+            submitHandler: function (form) {
+                scope.export();
+            }
+        });
+    }, 600);
+
+</script>

@@ -1,0 +1,245 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div ng-if="mode=='them'" class="panel-title">{{"them_web_service"|translate}}</div>
+    <div ng-if="mode=='sua'" class="panel-title">{{"cap_nhat_web_service"|translate}}</div>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal form margin-bottom-40" role="form" id="form-webservice" mode="{{mode}}">
+      <div class="form-heading text-center">
+        <button class="btn btn-success" ng-if="mode=='them'"><i class="fa fa-plus"></i> {{"them"|translate}}</button>
+        <button class="btn btn-success" ng-if="mode=='sua'"><i class="fa fa-plus"></i> {{"luu"|translate}}</button>
+        <div class="btn btn-danger" ng-click="goToList()">
+          <i class="fa fa-close"></i> {{"huy"|translate}}
+        </div>
+      </div>
+      <div class="form-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-4 control-label text-right">{{"ten_web_service"|translate}}</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" name="wsName" ng-model="data.wsName" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group form-md-radios">
+              <label class="col-md-4 control-label" for="form_control_1">{{"loai"|translate}}</label>
+              <div class="col-md-8">
+                <div class="md-radio-inline">
+                  <div class="md-radio">
+                    <input type="radio" id="checkbox1_8" name="type" value="0" ng-model="data.wsType" class="md-radiobtn">
+                    <label for="checkbox1_8">
+                      <span></span>
+                      <span class="check"></span>
+                      <span class="box"></span>{{"RESTful"|translate}}
+                    </label>
+                  </div>
+                  <div class="md-radio">
+                    <input type="radio" id="checkbox1_9" name="type" value="1" ng-model="data.wsType" class="md-radiobtn">
+                    <label for="checkbox1_9">
+                      <span></span>
+                      <span class="check"></span>
+                      <span class="box"></span> {{"SOAP"|translate}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-2 control-label text-right">{{"URL"|translate}}</label>
+              <div class="col-md-10">
+                <input class="form-control" name="url" ng-model="data.url" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-4 control-label text-right">{{"tham_so"|translate}}</label>
+              <div class="col-md-8">
+                <input class="form-control" name="params" ng-model="data.params" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-4 control-label text-right">{{"ten_dang_nhap"|translate}}</label>
+              <div class="col-md-8">
+                <input class="form-control" name="username" ng-model="data.username" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-4 control-label text-right">{{"mat_khau"|translate}}</label>
+              <div class="col-md-8">
+                <input type="password" class="form-control" name="password" ng-model="data.password" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-4 control-label text-right">{{"XPATH_RESPONSE_CODE"|translate}}</label>
+              <div class="col-md-8">
+                <input class="form-control" name="XPATH_RESPONSE_CODE" ng-model="data.xpathResponseCode" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-4 control-label text-right">{{"RSP_CODE_SUCC"|translate}}</label>
+              <div class="col-md-8">
+                <input  class="form-control" name="RSP_CODE_SUCC" ng-model="data.rspCodeSucc" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-4 control-label text-right">{{"XPATH_EXTENSION_01"|translate}}</label>
+              <div class="col-md-8">
+                <input class="form-control" name="XPATH_EXTENSION_01" ng-model="data.xpathExtension01" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-4 control-label text-right">{{"XPATH_EXTENSION_02"|translate}}</label>
+              <div class="col-md-8">
+                <input type="password" class="form-control" name="XPATH_EXTENSION_02" ng-model="data.xpathExtension02" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-4 control-label text-right">{{"XPATH_EXTENSION_03"|translate}}</label>
+              <div class="col-md-8">
+                <input type="password" class="form-control" name="XPATH_EXTENSION_03" ng-model="data.xpathExtension03" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="form-group form-md-line-input">
+            <label class="col-sm-2 control-label text-right">{{"XML"|translate}}</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" summernote name="rawXml" ng-model="data.rawXml" mode="code"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div ng-if="mode=='them'" ng-click="reset()" class="clear-form-data btn btn-sm btn-circle btn-danger">{{"xoa"|translate}}</div>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    var scope = angular.element("#current-controller").scope();
+    validator = myApp.validateForm("#form-webservice", {
+      rules: {
+        wsName: {
+          required: true,
+          maxlength: config.validate.length200
+        },
+        username: {
+          required: true,
+          maxlength: config.validate.length50
+        },
+        password: {
+          required: true,
+          maxlength: config.validate.length50
+        },
+        url: {
+          required: true,
+          maxlength: config.validate.length1000,
+          urlLink: true
+        },
+        params: {
+          required: true,
+          maxlength: config.validate.length4000
+        },
+        wsType: {
+          maxlength: config.validate.length20
+        },
+        rawXml: {
+          required: true,
+          maxlength: config.validate.length4000
+        },
+        des: {
+          required: true,
+          maxlength: config.validate.length1000
+        }
+      },
+      messages: {
+        wsName: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength200
+        },
+        username: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength50
+        },
+        password: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength50
+        },
+        url: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength1000,
+          urlLink: validateMessages.ErrUrl
+        },
+        params: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength4000
+        },
+        wsType: {
+          maxlength: validateMessages.ErrMaxLength20
+        },
+        rawXml: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength4000
+        },
+        des: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength1000
+        }
+      },
+      submitHandler: function (form) {
+        if ($(form).attr("mode") == 'them') {
+          scope.add();
+        }
+        else if ($(form).attr("mode") == 'sua') {
+          scope.update();
+        }
+      }
+    });
+  });
+</script>

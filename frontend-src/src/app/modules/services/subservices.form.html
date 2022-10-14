@@ -1,0 +1,231 @@
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div class="panel-title" ng-if="mode=='them'">{{"them_moi_goi_cuoc"|translate}}</div>
+    <div class="panel-title" ng-if="mode=='sua'">{{"sua_goi_cuoc"|translate}}</div>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal form margin-bottom-40" role="form" id="form-goi-cuoc" mode="{{mode}}">
+      <div class="form-heading text-center">
+        <button class="btn btn-success" ng-if="mode=='them'"><i class="fa fa-plus"></i> {{"them"|translate}}</button>
+        <button class="btn btn-success" ng-if="mode=='sua'"><i class="fa fa-plus"></i> {{"luu"|translate}}</button>
+        <div class="btn btn-danger" ng-click="goToList()">
+          <i class="fa fa-close"></i> {{"huy"|translate}}
+        </div>
+      </div>
+      <div class="form-body">
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-right">{{"ma_goi_cuoc"|translate}}</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" name="code" ng-model="data.code" />
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-sm-4 control-label text-right">{{"ten_goi_cuoc"|translate}}</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" name="name" ng-model="data.name" />
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-right">{{"dich_vu"|translate}}</label>
+                <div class="col-md-8">
+                  <select select2 class="form-control" name="serviceId" refresh-counter="subServiceRefresh" get-data="getServices()" ng-model="data.serviceId" value="{{data.serviceId}}" placeholder="{{selectServiceText}}"></select>
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div radio-language ng-model="data.language" name="language"></div>
+            </div>
+          </div>
+          <div class="form-group form-md-line-input">
+            <label class="col-sm-2 control-label text-right">{{"mo_ta_ngan"|translate}}</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="shortDes" ng-model="data.shortDes" />
+              <div class="form-control-focus"></div>
+            </div>
+          </div>
+          <div class="form-group form-md-line-input">
+            <label class="col-sm-2 control-label text-right">{{"mo_ta_chi_tiet"|translate}}</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" summernote name="fullDes" ng-model="data.fullDes"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <h4 class="text-left col-md-12">{{"icon"|translate}}</h4>
+            <div class="col-md-12">
+              <div ng-model="data.iconUrl" name="iconUrl" folder="service" fileinput class="fileinput" data-provides="fileinput" ng-class="{'fileinput-new': mode=='them','fileinput-exists':mode=='sua'}"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-3">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-5 control-label text-right">{{"loai_goi_cuoc"|translate}}</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" name="type" ng-model="data.type" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-5 control-label text-right">{{"dung_luong"|translate}}</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" name="volume" ng-model="data.volume" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-5 control-label text-right">{{"gia"|translate}}</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" name="price" ng-model="data.price" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group form-md-line-input">
+              <label class="col-md-5 control-label text-right">{{"don_vi"|translate}}</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" name="unit" ng-model="data.unit" />
+                <div class="form-control-focus"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div ng-if="mode=='them'" ng-click="reset()" class="clear-form-data btn btn-sm btn-circle btn-danger">{{"xoa"|translate}}</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    var scope = angular.element("#angular-controller").scope();
+    validator = myApp.validateForm("#form-goi-cuoc", {
+      rules: {
+        name: {
+          required: true,
+          maxlength: config.validate.length200
+        },
+        shortDes: {
+          required: true,
+          maxlength: config.validate.length1000
+        },
+        fullDes: {
+          required: true,
+          maxlength: config.validate.length4000
+        },
+        iconUrl: {
+          required: true,
+          imageLink: true
+        },
+        sourceLink: {
+          required: true,
+          urlLink: true
+        },
+
+        code: {
+          required: true,
+          maxlength: config.validate.length20
+        },
+        serviceId: {
+          required: true
+        },
+        type: {
+          required: true,
+          maxlength: config.validate.length10
+        },
+        volume: {
+          required: true,
+          number: true,
+          maxlength: config.validate.length6,
+          min: 0
+        },
+        unit: {
+          required: true
+        },
+        price: {
+          required: true,
+          number: true,
+          min: 0,
+          maxlength: config.validate.length6
+        }
+      },
+      messages: {
+        name: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength200
+        },
+        shortDes: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength1000
+        },
+        fullDes: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength4000
+        },
+        iconUrl: {
+          required: validateMessages.ErrRequired,
+          imageLink: validateMessages.ErrImageLink
+        },
+        sourceLink: {
+          required: validateMessages.ErrRequired,
+          urlLink: validateMessages.ErrUrl
+        },
+
+        code: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength20
+        },
+        serviceId: {
+          required: validateMessages.ErrRequired
+        },
+        type: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength10
+        },
+        volume: {
+          required: validateMessages.ErrRequired,
+          number: validateMessages.ErrNumber,
+          maxlength: validateMessages.ErrMaxLength6,
+          min: validateMessages.ErrMinValue0
+        },
+        unit: {
+          required: validateMessages.ErrRequired
+        },
+        price: {
+          required: validateMessages.ErrRequired,
+          number: validateMessages.ErrNumber,
+          min: validateMessages.ErrMinValue0,
+          maxlength: validateMessages.ErrMaxLength6
+        }
+      },
+      submitHandler: function (form) {
+        if ($(form).attr("mode") == 'them') {
+          scope.add();
+        }
+        else if ($(form).attr("mode") == 'sua') {
+          scope.update();
+        }
+      }
+    });
+  });
+</script>

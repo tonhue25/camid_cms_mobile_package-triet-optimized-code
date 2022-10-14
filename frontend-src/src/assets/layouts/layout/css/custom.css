@@ -1,0 +1,69 @@
+/* here you can put your own css to customize and override the theme */
+
+.table-container .dataTables_wrapper .dataTables_paginate{
+  float:none;
+  text-align:center;
+}
+
+.form-group.form-md-line-input.has-error div.help-block.help-block-error{
+  opacity:1 !important;
+}
+
+.form-group.has-error div.help-block.help-block-error{
+  opacity:1 !important;
+}
+
+.form-group.form-md-line-input.has-error .form-control~.help-block-error{
+  opacity:1 !important;
+}
+
+.form-group.form-md-line-input .help-block {
+  opacity:0 !important;
+}
+
+.filter-region .form-group .control-label{
+  margin-right:10px;
+}
+
+.filter-region .form-group.margin-left-20{
+  margin-left:20px;
+}
+
+.panel-primary>.panel-heading {
+  background-color:#32c5d2;
+  border-color:#32c5d2;
+}
+.panel-primary{
+  border-color:#32c5d2;
+}
+
+.highcharts-container svg>text[text-anchor="end"]{
+  display:none;
+}
+
+.padding-left-0 {
+  padding-left:0px;
+}
+
+.padding-right-0 {
+  padding-right:0px;
+}
+
+table.dataTable td.sorting_1{
+  background-color:#ffffff !important;
+}
+
+div.form-group.form-md-line-input .form-control:focus~.help-block{
+  opacity:1 !important;
+}
+
+.form-group.form-md-line-input .form-control[readonly]{
+    cursor:pointer
+}
+
+.form-heading.text-center button.btn.btn-success{
+  margin-right:4px;
+}
+.div.dataTables_wrapper div.dataTables_info{
+    margin-left:10px;
+}

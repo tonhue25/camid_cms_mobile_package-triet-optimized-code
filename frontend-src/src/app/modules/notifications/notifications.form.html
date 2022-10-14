@@ -1,0 +1,355 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div ng-if="mode=='them'" class="panel-title">{{"them_moi_notification"|translate}}</div>
+    <div ng-if="mode=='sua'" class="panel-title">{{"cap_nhat_notification"|translate}}</div>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal form margin-bottom-40" role="form" id="form-role" mode="{{mode}}">
+      <div class="form-heading text-center">
+        <div class="btn btn-warning" ng-if="mode=='sua' && data.status!=4" ng-click="cancelNoti()"><i
+            class="fa fa-ban"></i> {{"Cancel"|translate}}</div>
+        <button class="btn btn-success" ng-if="mode=='them'"><i class="fa fa-plus"></i> {{"them"|translate}}</button>
+        <button class="btn btn-success" ng-if="mode=='sua'"><i class="fa fa-plus"></i> {{"luu"|translate}}</button>
+        <div class="btn btn-default btnTester" ng-if="mode=='sua'" ng-click="testing()">
+          <img src="assets/global/img/icon-test.png" width="20px" height="20px" ng-if="data.test_status == 1" />
+          <img src="assets/global/img/running.png" width="20px" height="20px" ng-if="data.test_status == 2" />
+          <img src="assets/global/img/tick-icon.jpg" width="20px" height="20px" ng-if="data.test_status == 3" />
+          {{"Request"|translate}}</div>
+        <div class="btn btn-danger" ng-click="goToList()">
+          <i class="fa fa-close"></i> {{"huy"|translate}} </div>
+      </div>
+      <div class="form-body">
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-2 control-label text-left">{{"Title"|translate}}</label>
+                <div class="col-md-10">
+                  <input type="text" class="form-control" name="title" ng-model="data.title" />
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group form-md-line-input">
+                  <label class="col-md-4 control-label text-left">{{"Program code"|translate}}</label>
+                  <div class="col-md-8">
+                    <input type="text" name="code" ng-model="data.code" class="form-control" />
+                    <div class="form-control-focus"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-md-checkboxes">
+                <label class="col-md-4 control-label text-left"> {{"Is Save"|translate }} </label>
+                <div class="md-checkbox-inline col-md-1">
+                  <div class="md-checkbox">
+                    <input type="checkbox" id="isSave"  ng-model="data.isSave">
+                    <label for="isSave">
+                      <span class="inc"></span>
+                      <span class="check"></span>
+                      <span class="box"></span> </label>
+                  </div>
+                </div>
+                <label class="col-md-6 control-label text-left" ng-if="data.notificationProgramType==1">
+                  {{"Content from campaign"|translate }} </label>
+                <div class="md-checkbox-inline" ng-if="data.notificationProgramType==1">
+                  <div class="md-checkbox">
+                    <input type="checkbox" id="contentFromCampaign" ng-model="data.contentFromCampaign">
+                    <label for="contentFromCampaign">
+                      <span class="inc"></span>
+                      <span class="check"></span>
+                      <span class="box"></span> </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-md-checkboxes">
+                <label class="col-md-4 control-label text-left"> {{"Is campaign"|translate }} </label>
+                <div class="col-md-8">
+                  <select select2-filter class="form-control" get-data="getNotifyProgramType()" name="notificationProgramType"
+                          style="width: 100%" ng-model="data.notificationProgramType" search
+                          ng-change="changeNotificationType(data.notificationProgramType)"></select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-left">{{"Start time"|translate}}</label>
+                <div class="col-md-5">
+                  <div datepicker ng-model="data.startTime" name="effectTime" id="effectTime"
+                    class="input-group date  bs-datetime">
+                  </div>
+                </div>
+                <div vtgtimepicker class="col-md-3">
+                  <input type="text" class="form-control" name="timeStart" id="timeStart" ng-model="data.startHours" />
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-left">{{"End time"|translate}}</label>
+                <div class="col-md-5">
+                  <div datepicker ng-model="data.endTime" name="expiredTime" id="expiredTime"
+                    class="input-group date  bs-datetime">
+                  </div>
+                </div>
+                <div vtgtimepicker class="col-md-3">
+                  <input type="text" class="form-control" name="timeEnd" id="timeEnd" ng-model="data.endHours" />
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-left">{{"Push type"|translate}}</label>
+                <div class="col-md-8">
+                  <select select2-filter class="form-control" get-data="getDataNotiType()" name="notificationType"
+                    style="width: 100%" ng-model="data.notificationType" search
+                    ng-change="changeNotificationType(data.notificationType)"></select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-left">{{"Test phone"|translate}}</label>
+                <div class="col-md-8">
+                  <textarea name="testPhone" ng-model="data.listTestPhone" class="form-control"></textarea>
+                  <div class="form-control-focus"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-left">{{"Service code"|translate}}</label>
+                <div class="col-md-8">
+                  <input ng-show="data.notificationType!=4" type="text" class="form-control" name="serviceCode"
+                    ng-model="data.serviceCode" ng-class="{'pointer-events-none':data.notificationType!=4}"></input>
+                  <textarea ng-show="data.notificationType==4" name="serviceCode" ng-model="data.serviceCode"
+                    class="form-control" ng-class="{'pointer-events-none':data.notificationType!=4}"></textarea>
+                  <div class="form-control-focus"></div>
+                </div>
+                <div class="col-md-12 text-right" ng-if="data.notificationType!=4">
+                  <div class="btn btn-success" href="#chosenSubservice" data-toggle="modal">{{"Chosen"|translate}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-md-line-input">
+                <label class="col-md-4 control-label text-left">{{"Name"|translate}}</label>
+                <div class="col-md-8">
+                  <input name="serviceName" ng-model="data.serviceName" class="form-control"
+                    ng-class="{'pointer-events-none':data.notificationType!=4}">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-md-2 control-label text-left">{{"Message"|translate}}</label>
+              <div class="col-md-10">
+                <textarea rows="6" class="form-control" id="summernote" name="message"
+                  ng-model="data.message"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="col-md-12">
+            <div class="form-group">
+              <h4 class="text-left col-md-12">{{"Icon"|translate}}</h4>
+              <div class="col-md-12">
+                <div ng-model="data.icon" name="icon" mode="{{mode}}" folder="news"
+                  ng-class="{'fileinput-new': mode=='them','fileinput-exists':mode=='sua'}" fileinput class="fileinput"
+                  data-provides="fileinput"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <h4 class="text-left col-md-12">{{"Image"|translate}}</h4>
+              <div class="col-md-12">
+                <div ng-model="data.image" name="image" mode="{{mode}}" folder="news"
+                  ng-class="{'fileinput-new': mode=='them','fileinput-exists':mode=='sua'}" fileinput class="fileinput"
+                  data-provides="fileinput"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 text-right">
+        <div ng-if="mode=='them'" ng-click="reset()" class="clear-form-data btn btn-sm btn-circle btn-danger">
+          {{"xoa"|translate}}</div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal fade" id="chosenSubservice">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" ng-if="data.notificationType=='1'">{{"Select service"|translate}}</h4>
+        <h4 class="modal-title" ng-if="data.notificationType=='2'">{{"Select News"|translate}}</h4>
+        <h4 class="modal-title" ng-if="data.notificationType=='3'">{{"Select Application"|translate}}</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <select select2-filter class="form-control" ng-if="data.notificationType=='1'" search
+              get-data="getDataForSelect2()" style="width: 100%" ng-model="data.chosenSubService"
+              name="subservice"></select>
+            <select select2-filter class="form-control" ng-if="data.notificationType=='2'" name="subservic2e" search
+              get-data="getDataForSelect2New()" style="width: 100%" ng-model="data.chosenSubService"></select>
+            <select select2-filter class="form-control" ng-if="data.notificationType=='3'" search
+              get-data="getDataForSelect2Appication()" style="width: 100%" ng-model="data.chosenSubService"></select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+        <button class="btn btn-success" ng-click="addSubservice(data.chosenSubService)"><i class="fa fa-plus"></i>
+          {{"them"|translate}}</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<script>
+  var scope = angular.element("#current-controller").scope();
+  window.setTimeout(function () {
+    validator = myApp.validateForm("#form-role", {
+      rules: {
+        title: {
+          required: true,
+          maxlength: config.validate.length250
+        },
+        code: {
+          required: true,
+          maxlength: config.validate.length100
+        },
+        serviceCode: {
+          required: true,
+          maxlength: config.validate.length250
+        },
+        serviceName: {
+          required: true
+        },
+        order: {
+          required: true,
+          //maxlength: config.validate.length3,
+          intCheck: true,
+          max: 999,
+          min: 0
+        },
+        sourceLink: {
+          required: true,
+          maxlength: config.validate.length200,
+          urlLink: true
+        },
+        image: {
+          required: true,
+          imageLink: true,
+          maxlength: config.validate.length250
+        },
+        icon: {
+          required: true,
+          imageLink: true,
+          maxlength: config.validate.length250
+        },
+        message: {
+          required: true,
+          maxlength: config.validate.length4000
+        },
+        publishedTime: {
+          required: true
+        },
+        expiredTime: {
+          required: true,
+          expireDate_larger_effectDate: function () {
+            return $('#effectTime input').val();
+          }
+        },
+        effectTime: {
+          required: true
+        },
+        testPhone: {
+          maxlength: config.validate.length4000,
+          listPhone: true
+        }
+      },
+      messages: {
+        title: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength255
+        },
+        code: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength100
+        },
+        serviceCode: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength255
+        },
+        serviceName: {
+          required: validateMessages.ErrRequired,
+        },
+        order: {
+          required: validateMessages.ErrRequired,
+        },
+        sourceLink: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength200,
+          urlLink: validateMessages.ErrUrl
+        },
+        image: {
+          required: validateMessages.ErrRequired,
+          url: validateMessages.ErrUrl,
+          imageLink: validateMessages.ErrImageLink,
+          maxlength: validateMessages.ErrMaxLength255
+        },
+        icon: {
+          required: validateMessages.ErrRequired,
+          imageLink: validateMessages.ErrImageLink,
+          maxlength: validateMessages.ErrMaxLength255
+        },
+        message: {
+          required: validateMessages.ErrRequired,
+          maxlength: validateMessages.ErrMaxLength4000
+        },
+        publishedTime: {
+          required: validateMessages.ErrRequired,
+        },
+        expiredTime: {
+          required: validateMessages.ErrExpiredTimeReq,
+          expireDate_larger_effectDate: validateMessages.expireDate_larger_effectDate
+        },
+        effectTime: {
+          required: validateMessages.ErrEffectTimeReq
+        },
+        testPhone: {
+          maxlength: validateMessages.ErrMaxLength4000,
+          listPhone: validateMessages.ErrPhonePattern
+        }
+      },
+      submitHandler: function (form) {
+        if ($(form).attr("mode") == 'them') {
+          scope.add();
+        } else if ($(form).attr("mode") == 'sua') {
+          scope.update();
+        }
+      }
+    });
+  }, 600);
+
+</script>

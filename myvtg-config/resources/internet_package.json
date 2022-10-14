@@ -1,0 +1,295 @@
+﻿{
+	"packages": [
+		{
+
+			"id": 1,
+			"payAdvance": 3,
+			"speed": 10,
+			"price": "$15",
+			"name": "Basic",
+			"installation": "FREE",
+			"deposit": "$15",
+			"modemWifi": "$20"
+		},
+		{
+			"id": 2,
+			"payAdvance": 3,
+			"speed": 12,
+			"price": "$20",
+			"name": "Basic",
+			"installation": "FREE",
+			"deposit": "$15",
+			"modemWifi": "$20"
+		},
+		{
+			"id": 3,
+			"payAdvance": 3,
+			"speed": 17,
+			"price": "$30",
+			"name": "Family",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "$20"
+		},
+		{
+			"id": 4,
+			"payAdvance": 3,
+			"speed": 19,
+			"price": "$35",
+			"name": "Family",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "$20"
+		},
+		{
+			"id": 5,
+			"payAdvance": 3,
+			"speed": 21,
+			"price": "$40",
+			"name": "Family",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "$20"
+		},
+		{
+			"id": 6,
+			"payAdvance": 3,
+			"speed": 33,
+			"price": "$65",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "$20"
+		},
+		{
+			"id": 7,
+			"payAdvance": 3,
+			"speed": 43,
+			"price": "$90",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "$20"
+		},
+		{
+			"id": 8,
+			"payAdvance": 3,
+			"speed": 82,
+			"price": "$180",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "$20"
+		},
+		{
+			"id": 9,
+			"payAdvance": 3,
+			"speed": 97,
+			"price": "$350",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "$20"
+		},
+		{
+			"id": 10,
+			"payAdvance": 5,
+			"speed": 10,
+			"price": "$15",
+			"name": "Basic",
+			"installation": "FREE",
+			"deposit": "$15",
+			"modemWifi": "LEND",
+			"specialPromotion":
+			"\n•Get FREE 2 month special promotion for customer in Phnom Penh \n•Get FREE 1.5 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 1 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 11,
+			"payAdvance": 5,
+			"speed": 12,
+			"price": "$20",
+			"name": "Basic",
+			"installation": "FREE",
+			"deposit": "$15",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 2 month special promotion for customer in Phnom Penh \n•Get FREE 1.5 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 1 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 12,
+			"payAdvance": 5,
+			"speed": 17,
+			"price": "$30",
+			"name": "Family",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 2 month special promotion for customer in Phnom Penh \n•Get FREE 1.5 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 1 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 13,
+			"payAdvance": 5,
+			"speed": 19,
+			"price": "$35",
+			"name": "Family",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 2 month special promotion for customer in Phnom Penh \n•Get FREE 1.5 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 1 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 14,
+			"payAdvance": 5,
+			"speed": 21,
+			"price": "$40",
+			"name": "Family",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 2 month special promotion for customer in Phnom Penh \n•Get FREE 1.5 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 1 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 15,
+			"payAdvance": 5,
+			"speed": 33,
+			"price": "$65",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 2 month special promotion for customer in Phnom Penh \n•Get FREE 1.5 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 1 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 16,
+			"payAdvance": 5,
+			"speed": 43,
+			"price": "$90",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 2 month special promotion for customer in Phnom Penh \n•Get FREE 1.5 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 1 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 17,
+			"payAdvance": 5,
+			"speed": 82,
+			"price": "$180",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 2 month special promotion for customer in Phnom Penh \n•Get FREE 1.5 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 1 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 18,
+			"payAdvance": 5,
+			"speed": 97,
+			"price": "$350",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 2 month special promotion for customer in Phnom Penh \n•Get FREE 1.5 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 1 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 19,
+			"payAdvance": 10,
+			"speed": 10,
+			"price": "$15",
+			"name": "Basic",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion":
+			"\n•Get FREE 4 month special promotion for customer in Phnom Penh. \n•Get FREE 3 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 2 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 20,
+			"payAdvance": 10,
+			"speed": 12,
+			"price": "$20",
+			"name": "Basic",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 4 month special promotion for customer in Phnom Penh. \n•Get FREE 3 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 2 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 21,
+			"payAdvance": 10,
+			"speed": 17,
+			"price": "$30",
+			"name": "Family",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 4 month special promotion for customer in Phnom Penh. \n•Get FREE 3 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 2 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 22,
+			"payAdvance": 10,
+			"speed": 19,
+			"price": "$35",
+			"name": "Family",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 4 month special promotion for customer in Phnom Penh. \n•Get FREE 3 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 2 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 23,
+			"payAdvance": 10,
+			"speed": 21,
+			"price": "$40",
+			"name": "Family",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 4 month special promotion for customer in Phnom Penh. \n•Get FREE 3 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 2 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 24,
+			"payAdvance": 10,
+			"speed": 33,
+			"price": "$65",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 4 month special promotion for customer in Phnom Penh. \n•Get FREE 3 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 2 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 25,
+			"payAdvance": 10,
+			"speed": 43,
+			"price": "$90",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 4 month special promotion for customer in Phnom Penh. \n•Get FREE 3 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 2 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 26,
+			"payAdvance": 10,
+			"speed": 82,
+			"price": "$180",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 4 month special promotion for customer in Phnom Penh. \n•Get FREE 3 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 2 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		},
+		{
+			"id": 27,
+			"payAdvance": 10,
+			"speed": 97,
+			"price": "$350",
+			"name": "Business",
+			"installation": "FREE",
+			"deposit": "FREE",
+			"modemWifi": "LEND",
+			"specialPromotion": "\n•Get FREE 4 month special promotion for customer in Phnom Penh. \n•Get FREE 3 Months special promotion for customer in Banteymeanchey, Battambang, Kampongcham, Kandal, Siemreab, Siemreab, Sihanouk Ville, Kampong Thom \n•Get FREE 2 Months special promotion for customer in Kampong Spue, Stung Treng, Oudor Meanchey, Mondol Kiri, Koh kong, Kratie, Kampong Chhnang, Pursat, Preyveng, Preah Vihear, Kampot, Takeo, Svayrieng \n•Fees include 10% VAT"
+		}
+	]
+}
