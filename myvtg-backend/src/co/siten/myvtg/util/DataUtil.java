@@ -315,6 +315,11 @@ public class DataUtil {
         return str == null || str.isEmpty() || str.matches(RegexUtil.CHECK_SPACE);
     }
 
+    public static boolean isNullOrEmpty(Object object) {
+        String str = parseToString(object);
+        return str == null || str.isEmpty() || str.matches(RegexUtil.CHECK_SPACE);
+    }
+
     public static String parseToString(Object value) {
         return parseToString(value, null);
     }

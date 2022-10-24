@@ -22,7 +22,6 @@ import org.hibernate.type.StringType;
  */
 @Repository("LoyaltyDao")
 @Qualifier("loytaltytx")
-
 public class LoyaltyDao extends AbstractLoyaltyDao<Object> {
     
     	private static final Logger logger = Logger.getLogger(LoyaltyDao.class.getName());

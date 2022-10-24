@@ -283,18 +283,11 @@ public class BaseController {
     /**
      * duyth for BaseRequest
      *
-     * @param request
      * @param bean
      * @return
      */
-    protected ResponseEntity<BaseResponseBean> baseResponse(BaseRequest request, BaseResponseBean bean) {
+    protected ResponseEntity<BaseResponseBean> baseResponse(BaseResponseBean bean) {
         logger.info("Response: " + CommonUtil.convertObjectToJsonString(bean));
-        try {
-            Log log = new Log(request, bean);
-            logService.insertLog(log);
-        } catch (Exception e) {
-            logger.info("Error: " + e.getMessage(), e);
-        }
         return new ResponseEntity<BaseResponseBean>(bean, HttpStatus.OK);
     }
 
@@ -310,7 +303,7 @@ public class BaseController {
      */
     protected ResponseEntity<BaseResponseBean> baseResponse(BaseRequest request, String errorCode, String description, String content, String language) {
         BaseResponseBean bean = new BaseResponseBean(errorCode, messageUtil.getMessage(description + language), messageUtil.getMessage(content + language));
-        return baseResponse(request, bean);
+        return baseResponse(bean);
     }
     // end BaseRequest
 

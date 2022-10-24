@@ -64,7 +64,6 @@ public class ServiceOfServiceImpl implements ServiceOfService {
 
     @Override
     public BaseResponseBean addOrUpdateService(RequestBean requestBean, String language, String username) {
-
         try {
             Date date = serviceDao.getTime();
             Map<String, Object> wsRequest = requestBean.getWsRequest();

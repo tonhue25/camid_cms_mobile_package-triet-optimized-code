@@ -27,6 +27,10 @@ public class BaseResponseBean implements Serializable {
         this.message = message;
     }
 
+    public BaseResponseBean(String message) {
+        this.message = message;
+    }
+
     public void setWsResponse(List<Object> wsResponse) {
         this.wsResponse = wsResponse;
     }
@@ -77,6 +81,10 @@ public class BaseResponseBean implements Serializable {
         this.errorCode = errorCode;
         this.message = message;
         this.userMsg = userMsg;
+        this.wsResponse = wsResponse;
+    }
+
+    public BaseResponseBean(Object wsResponse) {
         this.wsResponse = wsResponse;
     }
 

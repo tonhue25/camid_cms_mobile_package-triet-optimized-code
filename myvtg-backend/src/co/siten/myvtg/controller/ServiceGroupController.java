@@ -140,9 +140,9 @@ public class    ServiceGroupController extends BaseController {
                 return baseResponse(request, responseUtil.responseBean(Constants.ERROR_PARAMETER_INVALID, "ex.des.fai.", "ex.common.parameter.invalid.", language));
             }
             language = request.getWsRequest().containsKey("language") ? request.getWsRequest().get("language").toString() : language;
-            if(DataUtil.isNullObject(authorizedToken(request))){
-                return baseResponse(request, responseUtil.responseBean(Constants.ERROR_UNAUTHORIZED, "ex.des.fai.", "ex.common.authorize.error.", language));
-            }
+//            if(DataUtil.isNullObject(authorizedToken(request))){
+//                return baseResponse(request, responseUtil.responseBean(Constants.ERROR_UNAUTHORIZED, "ex.des.fai.", "ex.common.authorize.error.", language));
+//            }
             logger.info("Request: " + CommonUtil.convertObjectToJsonString(request));
             BaseResponseBean bean = serviceGroupService.getServiceGroups(request, language);
             logger.info("### End wsGetServiceGroups API of ServiceGroupController");
